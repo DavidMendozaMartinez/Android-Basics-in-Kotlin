@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 /**
- * This activity allows the user to roll a dice and view the result
+ * This activity allows the user to roll two dice and view the results
  * on the screen.
  */
 class MainActivity : AppCompatActivity() {
@@ -26,16 +26,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Roll the dice and update the screen with the result.
+     * Roll the dice and update the screen with the results.
      */
     private fun rollDice() {
-        // Create new Dice object with 6 sides and roll it
-        val dice = Dice(6)
-        val diceRoll = dice.roll()
+        // Create two Dice objects with 6 sides and roll them
+        val firstDice = Dice(6)
+        val secondDice = Dice(6)
 
-        // Update the screen with the dice roll
-        val resultTextView: TextView = findViewById(R.id.textView)
-        resultTextView.text = diceRoll.toString()
+        val firstDiceRoll = firstDice.roll()
+        val secondDiceRoll = secondDice.roll()
+
+        // Update the screen with the dice rolls
+        val firstResultTextView: TextView = findViewById(R.id.textViewFirstDice)
+        val secondResultTextView: TextView = findViewById(R.id.textViewSecondDice)
+
+        firstResultTextView.text = firstDiceRoll.toString()
+        secondResultTextView.text = secondDiceRoll.toString()
     }
 }
 
