@@ -6,42 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:importantForAccessibility="no"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/androidparty" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/label_happy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-light"
-        android:text="@string/happy_birthday_text"
-        android:textColor="@android:color/white"
-        android:textSize="36sp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="cursive"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1"
+        android:text="@string/happy_text"
+        android:textColor="#039BE5"
+        android:textSize="64sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/label_birthday"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/label_birthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif-light"
-        android:text="@string/signature_text"
-        android:textColor="@android:color/white"
-        android:textSize="36sp"
+        android:fontFamily="cursive"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1"
+        android:text="@string/birthday_text"
+        android:textColor="#AEEA00"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/label_to_you"
+        app:layout_constraintEnd_toEndOf="@+id/label_happy"
+        app:layout_constraintStart_toStartOf="@+id/label_happy"
+        app:layout_constraintTop_toBottomOf="@+id/label_happy" />
+
+    <TextView
+        android:id="@+id/label_to_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1"
+        android:text="@string/to_you_text"
+        android:textColor="#039BE5"
+        android:textSize="64sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/label_birthday"
+        app:layout_constraintStart_toStartOf="@+id/label_birthday"
+        app:layout_constraintTop_toBottomOf="@+id/label_birthday" />
+
+    <ImageView
+        android:id="@+id/cake"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="48dp"
+        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_to_you"
+        app:srcCompat="@drawable/ic_baseline_cake_24"
+        app:tint="#AEEA00" />
+
+    <ImageView
+        android:id="@+id/gift"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/cake"
+        app:layout_constraintEnd_toEndOf="@+id/cake"
+        app:srcCompat="@drawable/ic_baseline_gift_24"
+        app:tint="#039BE5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
