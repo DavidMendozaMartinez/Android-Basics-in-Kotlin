@@ -6,7 +6,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 /**
- * This activity allows the user to roll a dice and view the result
+ * This activity allows the user to roll two dice and view the results
  * on the screen.
  */
 class MainActivity : AppCompatActivity() {
@@ -27,18 +27,37 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Roll the dice and update the screen with the result.
+     * Roll the dice and update the screen with the results.
      */
     private fun rollDice() {
-        // Create new Dice object with 6 sides and roll the dice
-        val dice = Dice(6)
-        val diceRoll = dice.roll()
+        // Create two Dice objects with 6 sides and roll them
+        val firstDice = Dice(6)
+        val secondDice = Dice(6)
+        val firstDiceRoll = firstDice.roll()
+        val secondDiceRoll = secondDice.roll()
 
-        // Find the ImageView in the layout
-        val diceImage: ImageView = findViewById(R.id.imageView)
+        // Find the ImageViews in the layout
+        val firstDiceImage: ImageView = findViewById(R.id.imageViewFirstDice)
+        val secondDiceImage: ImageView = findViewById(R.id.imageViewSecondDice)
 
-        // Determine which drawable resource ID to use based on the dice roll
-        val drawableResource = when (diceRoll) {
+        // Get the drawable resource IDs to use based on the dice roll
+        val firstDrawableResource = getDrawableResourceID(firstDiceRoll)
+        val secondDrawableResource = getDrawableResourceID(secondDiceRoll)
+
+        // Update the ImageViews with the correct drawable resource IDs
+        firstDiceImage.setImageResource(firstDrawableResource)
+        secondDiceImage.setImageResource(secondDrawableResource)
+
+        // Update the content descriptions
+        firstDiceImage.contentDescription = firstDiceRoll.toString()
+        secondDiceImage.contentDescription = secondDiceRoll.toString()
+    }
+
+    /**
+     * Determine which drawable resource ID to use based on the dice roll.
+     */
+    private fun getDrawableResourceID(diceRoll: Int) =
+        when (diceRoll) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
@@ -46,13 +65,6 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-
-        // Update the ImageView with the correct drawable resource ID
-        diceImage.setImageResource(drawableResource)
-
-        // Update the content description
-        diceImage.contentDescription = diceRoll.toString()
-    }
 }
 
 /**
