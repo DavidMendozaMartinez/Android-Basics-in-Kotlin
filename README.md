@@ -29,3 +29,9 @@ This course is divided into units. Each unit covers a major area of Android app 
 Build your first Android apps with the Kotlin programming language. Add images and text to your Android apps, and learn how to use classes, objects, and conditionals to create an interactive app for your users. 
 
 [Start Unit 1](https://developer.android.com/courses/android-basics-kotlin/unit-1)
+
+### Unit 2: Layouts
+
+Improve the user interface of your app by learning about layouts, Material Design guidelines, and best practices for UI development.
+
+[Start Unit 2](https://developer.android.com/courses/android-basics-kotlin/unit-2)
