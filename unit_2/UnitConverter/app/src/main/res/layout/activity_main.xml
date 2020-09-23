@@ -4,15 +4,216 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/label_volume_conversion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/volume_conversion"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_volume_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:entries="@array/volume_units"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toStartOf="@id/label_volume_to"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_volume_conversion" />
+
+    <TextView
+        android:id="@+id/label_volume_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        app:layout_constraintBottom_toBottomOf="@id/spinner_volume_from"
+        app:layout_constraintEnd_toStartOf="@id/spinner_volume_to"
+        app:layout_constraintStart_toEndOf="@id/spinner_volume_from"
+        app:layout_constraintTop_toTopOf="@id/spinner_volume_from" />
+
+    <Spinner
+        android:id="@+id/spinner_volume_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/volume_units"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@id/spinner_volume_from"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_volume_to"
+        app:layout_constraintTop_toTopOf="@id/spinner_volume_from" />
+
+    <EditText
+        android:id="@+id/volume_to_convert"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/volume"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_volume_from" />
+
+    <Button
+        android:id="@+id/calculate_volume"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        app:layout_constraintBottom_toBottomOf="@id/volume_to_convert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/volume_to_convert" />
+
+    <TextView
+        android:id="@+id/volume_conversion_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volume_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculate_volume" />
+
+    <TextView
+        android:id="@+id/label_weight_conversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/weight_conversion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/volume_conversion_result" />
+
+    <Spinner
+        android:id="@+id/spinner_weight_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:entries="@array/weight_units"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toStartOf="@id/label_weight_to"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_weight_conversion" />
+
+    <TextView
+        android:id="@+id/label_weight_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        app:layout_constraintBottom_toBottomOf="@id/spinner_weight_from"
+        app:layout_constraintEnd_toStartOf="@id/spinner_weight_to"
+        app:layout_constraintStart_toEndOf="@id/spinner_weight_from"
+        app:layout_constraintTop_toTopOf="@id/spinner_weight_from" />
+
+    <Spinner
+        android:id="@+id/spinner_weight_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/weight_units"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@id/spinner_weight_from"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_weight_to"
+        app:layout_constraintTop_toTopOf="@id/spinner_weight_from" />
+
+    <EditText
+        android:id="@+id/weight_to_convert"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/weight"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_weight_from" />
+
+    <Button
+        android:id="@+id/calculate_weight"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        app:layout_constraintBottom_toBottomOf="@id/weight_to_convert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/weight_to_convert" />
+
+    <TextView
+        android:id="@+id/weight_conversion_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weight_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculate_weight" />
+
+    <TextView
+        android:id="@+id/label_temperature_conversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/temperature_conversion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weight_conversion_result" />
+
+    <Spinner
+        android:id="@+id/spinner_temperature_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:entries="@array/temperature_units"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toStartOf="@id/label_temperature_to"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_temperature_conversion" />
+
+    <TextView
+        android:id="@+id/label_temperature_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        app:layout_constraintBottom_toBottomOf="@id/spinner_temperature_from"
+        app:layout_constraintEnd_toStartOf="@id/spinner_temperature_to"
+        app:layout_constraintStart_toEndOf="@id/spinner_temperature_from"
+        app:layout_constraintTop_toTopOf="@id/spinner_temperature_from" />
+
+    <Spinner
+        android:id="@+id/spinner_temperature_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/temperature_units"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="@id/spinner_temperature_from"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_temperature_to"
+        app:layout_constraintTop_toTopOf="@id/spinner_temperature_from" />
+
+    <EditText
+        android:id="@+id/temperature_to_convert"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/temperature"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_temperature_from" />
+
+    <Button
+        android:id="@+id/calculate_temperature"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        app:layout_constraintBottom_toBottomOf="@id/temperature_to_convert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/temperature_to_convert" />
+
+    <TextView
+        android:id="@+id/temperature_conversion_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculate_temperature" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Unit Converter</string>
+
+    <string name="to">to</string>
+    <string name="calculate">Calculate</string>
+    <string name="volume_conversion">Volume conversion</string>
+    <string name="volume">Volume</string>
+    <string name="volume_result">Volume result</string>
+    <string name="weight_conversion">Weight conversion</string>
+    <string name="weight">Weight</string>
+    <string name="weight_result">Weight result</string>
+    <string name="temperature_conversion">Temperature conversion</string>
+    <string name="temperature">Temperature</string>
+    <string name="temperature_result">Temperature result</string>
+
+    <string-array name="volume_units">
+        <item>Milliliters</item>
+        <item>Teaspoons</item>
+        <item>Tablespoons</item>
+        <item>Fluid ounces</item>
+        <item>Cups</item>
+    </string-array>
+
+    <string-array name="weight_units">
+        <item>Grams</item>
+        <item>Ounces</item>
+        <item>Pounds</item>
+        <item>Cups</item>
+    </string-array>
+
+    <string-array name="temperature_units">
+        <item>Fahrenheit</item>
+        <item>Celsius</item>
+    </string-array>
 </resources>
