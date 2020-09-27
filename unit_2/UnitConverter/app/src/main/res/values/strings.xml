@@ -9,23 +9,24 @@
     <string name="weight">Weight</string>
     <string name="temperature_conversion">Temperature conversion</string>
     <string name="temperature">Temperature</string>
+    <string name="conversion_result">%s %s</string>
 
     <string-array name="volume_units">
-        <item>Milliliters</item>
-        <item>Teaspoons</item>
-        <item>Tablespoons</item>
-        <item>Fluid ounces</item>
-        <item>Cups</item>
+        <item>ml</item>
+        <item>tsp</item>
+        <item>tbsp</item>
+        <item>fl oz</item>
+        <item>cup</item>
     </string-array>
 
     <string-array name="weight_units">
-        <item>Grams</item>
-        <item>Ounces</item>
-        <item>Pounds</item>
+        <item>g</item>
+        <item>oz</item>
+        <item>lb</item>
     </string-array>
 
     <string-array name="temperature_units">
-        <item>Fahrenheit</item>
-        <item>Celsius</item>
+        <item>°F</item>
+        <item>°C</item>
     </string-array>
 </resources>
