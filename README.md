@@ -35,3 +35,9 @@ Build your first Android apps with the Kotlin programming language. Add images a
 Improve the user interface of your app by learning about layouts, Material Design guidelines, and best practices for UI development.
 
 [Start Unit 2](https://developer.android.com/courses/android-basics-kotlin/unit-2)
+
+### Unit 3: Navigation
+
+Enhance your users’ ability to navigate across, into and back out from the various screens within your app for a consistent and predictable user experience.
+
+[Start Unit 3](https://developer.android.com/courses/android-basics-kotlin/unit-3)
