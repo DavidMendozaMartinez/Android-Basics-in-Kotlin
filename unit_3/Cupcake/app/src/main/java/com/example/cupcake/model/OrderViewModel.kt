@@ -27,6 +27,9 @@ class OrderViewModel : ViewModel() {
         NumberFormat.getCurrencyInstance().format(it)
     }
 
+    private val _isSpecialFlavor: MutableLiveData<Boolean> = MutableLiveData()
+    val isSpecialFlavor: LiveData<Boolean> get() = _isSpecialFlavor
+
     val dateOptions = getPickupOptions()
 
     init {
@@ -40,6 +43,13 @@ class OrderViewModel : ViewModel() {
 
     fun setFlavor(desiredFlavor: String) {
         _flavor.value = desiredFlavor
+        _isSpecialFlavor.value = false
+    }
+
+    fun setSpecialFlavor(desiredFlavor: String) {
+        _isSpecialFlavor.value = true
+        _flavor.value = desiredFlavor
+        setDate(dateOptions[1])
     }
 
     fun setDate(pickupDate: String) {
@@ -76,6 +86,7 @@ class OrderViewModel : ViewModel() {
     fun resetOrder() {
         _quantity.value = 0
         _flavor.value = ""
+        _isSpecialFlavor.value = false
         _date.value = dateOptions[0]
         _price.value = 0.0
     }
