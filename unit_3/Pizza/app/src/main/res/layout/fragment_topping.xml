@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ToppingFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.pizza.model.OrderViewModel" />
+
+        <variable
+            name="toppingFragment"
+            type="com.example.pizza.ToppingFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/side_margin">
+
+            <RadioGroup
+                android:id="@+id/topping_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/margherita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.topping.equals(@string/margherita)}"
+                    android:onClick="@{() -> viewModel.setTopping(@string/margherita)}"
+                    android:text="@string/margherita" />
+
+                <RadioButton
+                    android:id="@+id/pepperoni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.topping.equals(@string/pepperoni)}"
+                    android:onClick="@{() -> viewModel.setTopping(@string/pepperoni)}"
+                    android:text="@string/pepperoni" />
+
+                <RadioButton
+                    android:id="@+id/bbq_chicken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.topping.equals(@string/bbq_chicken)}"
+                    android:onClick="@{() -> viewModel.setTopping(@string/bbq_chicken)}"
+                    android:text="@string/bbq_chicken" />
+
+                <RadioButton
+                    android:id="@+id/hawaiian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.topping.equals(@string/hawaiian)}"
+                    android:onClick="@{() -> viewModel.setTopping(@string/hawaiian)}"
+                    android:text="@string/hawaiian" />
+
+                <RadioButton
+                    android:id="@+id/meat_lover"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.topping.equals(@string/meat_lover)}"
+                    android:onClick="@{() -> viewModel.setTopping(@string/meat_lover)}"
+                    android:text="@string/meat_lover" />
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.Pizza.Divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/side_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topping_options" />
+
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.Pizza.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:text="@{@string/subtotal_price(viewModel.price)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="Subtotal $5.00" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/side_margin"
+                android:onClick="@{() -> toppingFragment.cancelOrder()}"
+                android:text="@string/cancel"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button" />
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:onClick="@{() -> toppingFragment.goToNextScreen()}"
+                android:text="@string/next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

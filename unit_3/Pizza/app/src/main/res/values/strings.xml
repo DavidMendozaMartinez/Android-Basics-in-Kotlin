@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Pizza</string>
+    <string name="order_pizzas">Order Pizzas</string>
+    <string name="small_pizza">Small Pizza</string>
+    <string name="medium_pizza">Medium Pizza</string>
+    <string name="large_pizza">Large Pizza</string>
+    <string name="choose_topping">Choose Topping</string>
+    <string name="margherita">Margherita</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="bbq_chicken">BBQ Chicken</string>
+    <string name="hawaiian">Hawaiian</string>
+    <string name="meat_lover">Meat-Lover\'s</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="choose_pickup_date">Choose Pickup Date</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="send">Send Order to Another App</string>
+    <string name="size">Size</string>
+    <string name="topping">Topping</string>
+    <string name="pickup_date">Pickup date</string>
+    <string name="subtotal_price">Subtotal %s</string>
+    <string name="total_price">Total %s</string>
+    <string name="new_pizza_order">New Pizza Order</string>
+    <string name="order_details">Size: %1$s \n Topping: %2$s \nPickup date: %3$s \n
+        Total: %4$s \n\n Thank you!</string>
 </resources>
