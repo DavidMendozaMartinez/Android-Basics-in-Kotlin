@@ -41,3 +41,9 @@ Improve the user interface of your app by learning about layouts, Material Desig
 Enhance your users’ ability to navigate across, into and back out from the various screens within your app for a consistent and predictable user experience.
 
 [Start Unit 3](https://developer.android.com/courses/android-basics-kotlin/unit-3)
+
+### Unit 4: Connect to the internet
+
+Write coroutines for complex code, and learn about HTTP and REST to get data from the internet.
+
+[Start Unit 4](https://developer.android.com/courses/android-basics-kotlin/unit-4)
